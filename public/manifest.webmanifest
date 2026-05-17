@@ -1,0 +1,17 @@
+{
+  "name": "AlgoVision",
+  "short_name": "AlgoVision",
+  "description": "Interactive Algorithm Laboratory",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030406",
+  "theme_color": "#17120c",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

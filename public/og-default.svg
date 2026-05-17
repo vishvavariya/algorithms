@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="20%" r="40%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .title { font: 800 76px 'SF Pro Display', 'Inter', system-ui, sans-serif; fill: #ffffff; letter-spacing: -0.02em; }
+      .sub   { font: 600 28px 'SF Mono', 'JetBrains Mono', ui-monospace, monospace; fill: #94a3b8; letter-spacing: 0.02em; }
+      .label { font: 800 18px 'SF Mono', ui-monospace, monospace; fill: #06b6d4; letter-spacing: 0.4em; text-transform: uppercase; }
+      .bar   { fill: #06b6d4; }
+      .bar2  { fill: #ec4899; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <g transform="translate(80,90)">
+    <text class="label" x="0" y="0">ALGORITHM · LAB</text>
+    <text class="title" x="0" y="100">AlgoVision</text>
+    <text class="title" x="0" y="190" fill="#06b6d4">Algorithm Visualizer</text>
+    <text class="sub" x="0" y="260">Sort. Search. Pathfind. Cluster. Step-by-step.</text>
+  </g>
+  <g transform="translate(80,440)">
+    <rect x="0"   y="60" width="36" height="60" rx="6" class="bar"/>
+    <rect x="48"  y="20" width="36" height="100" rx="6" class="bar"/>
+    <rect x="96"  y="40" width="36" height="80"  rx="6" class="bar"/>
+    <rect x="144" y="0"  width="36" height="120" rx="6" class="bar"/>
+    <rect x="192" y="80" width="36" height="40"  rx="6" class="bar"/>
+    <rect x="240" y="30" width="36" height="90"  rx="6" class="bar2"/>
+    <rect x="288" y="50" width="36" height="70"  rx="6" class="bar2"/>
+    <rect x="336" y="10" width="36" height="110" rx="6" class="bar2"/>
+  </g>
+  <text x="80" y="600" class="sub" font-size="20">vishvavariya.github.io/algovision</text>
+</svg>

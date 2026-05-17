@@ -1,0 +1,192 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-xs: 400px;
+  --font-sans: var(--font-bricolage), ui-rounded, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+:root {
+  /* High-Fidelity Day Theme (Premium Slate) */
+  --cream: #f8fafc;
+  --ink: #2d3436; /* Deep Slate Grey */
+  --muted: #636e72; /* Muted Slate */
+  --peach: #fff7ed;
+  --mango: #fef3c7;
+  --mint: #f0fdf4;
+  --blue: #eff6ff;
+  --pink: #fdf2f8;
+  --card: #ffffff;
+  --canvas-bg: #fcfcfd;
+  --border: #e2e8f0; /* Faint Silver Grid/Borders */
+  --accent: #0891b2;
+  
+  /* Lush Depth Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-premium: 0 22px 80px rgba(0, 0, 0, 0.06);
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* Responsive Spacing Tokens */
+  --header-h: 4rem;
+  --min-h-viz: 280px;
+  --min-h-code: 200px;
+}
+
+@media (max-height: 500px) {
+  :root {
+    --header-h: 3rem;
+    --min-h-viz: 200px;
+    --min-h-code: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-h: 3.5rem;
+  }
+}
+
+.dark {
+  /* Night Mode (Deep Obsidian) */
+  --cream: #030406;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --peach: #fb923c;
+  --mango: #facc15;
+  --mint: #4ade80;
+  --blue: #60a5fa;
+  --pink: #f472b6;
+  --card: #0a0c10;
+  --canvas-bg: #05070a; /* Dark canvas for night mode */
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #22d3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-bricolage), ui-rounded, sans-serif;
+}
+
+.site-bg {
+  background:
+    /* Layer 1 & 2: Tactile offset dot grid */
+    radial-gradient(circle, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    radial-gradient(circle, color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1px),
+    /* Layer 3-7: Full-spectrum pastel aura mesh */
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--mango) 30%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--pink) 25%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--mint) 30%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--blue) 30%, transparent) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--peach) 20%, transparent) 0%, transparent 50%),
+    var(--cream);
+  background-size: 
+    32px 32px, 
+    32px 32px, 
+    100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 
+    0 0, 
+    16px 16px, 
+    0 0, 0 0, 0 0, 0 0, 0 0;
+  background-attachment: fixed;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #17120c;
+  color: #fff7e8;
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+
+
+.cartoon-border {
+  border: 2px solid rgba(23, 18, 12, 0.92);
+  box-shadow: 0 9px 0 rgba(23, 18, 12, 0.92);
+}
+
+.soft-noise::before {
+  background-image:
+    linear-gradient(rgba(23, 18, 12, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 18, 12, 0.03) 1px, transparent 1px);
+  background-size: 34px 34px;
+  content: '';
+  inset: 0;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+.doodle {
+  animation: floaty 8s ease-in-out infinite alternate;
+  will-change: transform;
+  contain: layout paint;
+  backface-visibility: hidden;
+}
+
+.doodle:nth-child(2n) {
+  animation-duration: 10s;
+  animation-delay: -2s;
+}
+
+.doodle:nth-child(3n) {
+  animation-duration: 12s;
+  animation-delay: -5s;
+}
+
+@keyframes floaty {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-3deg);
+  }
+
+  to {
+    transform: translate3d(0.8rem, -1.1rem, 0) rotate(5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .doodle,
+  .crt-flicker,
+  .scanline,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+}
+
+/* Global keyboard focus affordance — icon-only and decorative buttons often lack one. */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
